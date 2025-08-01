@@ -86,4 +86,4 @@ Feel free to **fork** this repository and tweak the analysis to fit your own sty
 ## 📬 Contact  
 
 📧 **Fareed Ologundudu**  
-Let’s connect on [LinkedIn](https://www.linkedin.com/in/fareed04) or check out more of my work on [GitHub](https://github.com/Fareed04).  
+Let’s connect on [LinkedIn](https://www.linkedin.com/in/fareed-ologundudu-129506249/) or check out more of my work on [GitHub](https://github.com/Fareed04).  
