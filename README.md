@@ -1,89 +1,136 @@
-# 📊 Chess.com Data Analysis  
+# ♟️ Chess.com Performance Analysis
 
-I have played over **2,000 chess games** across different formats on Chess.com. Using data obtained from the **Chess.com API**, this project provides a detailed analysis of my **rating progression, win/loss ratio, opening effectiveness**, and overall performance.  
+## 1️⃣ Project Objective
 
-By visualizing my data, I have **uncovered valuable insights** into my gameplay, helping me understand my strengths and weaknesses more clearly.
+This project analyzes over **2,000 rated games** played on Chess.com using data retrieved via the Chess.com API.
 
----
+The objective is to examine rating progression, performance trends, and opening effectiveness to uncover measurable patterns in gameplay behavior.
 
-## 🔍 Project Overview  
-
-This Python-powered data analysis project uses Chess.com game records to examine and visualize my performance metrics, including:  
-
-✔ **Rating Progression** – How my ratings have changed over time.  
-✔ **Win/Loss Trends** – Patterns and consistency in my gameplay.  
-✔ **Game Duration Analysis** – Insights based on time formats (Rapid, Blitz, etc.).  
-✔ **Opening Effectiveness** – Identifying which openings work best (and worst).  
-✔ **Most Played Openings** – Recurring patterns in my game strategies.  
-✔ **Win Rate by Opening** – Discovering strengths and weaknesses tied to openings.  
+Rather than reviewing individual games, this analysis focuses on identifying systematic strengths, weaknesses, and performance drivers across formats.
 
 ---
 
-## 📈 Features & Visualizations  
+## 2️⃣ Dataset & Data Source
 
-This project includes several interactive and informative visualizations:  
+- Source: Chess.com public API  
+- Scope: Personal rated game history  
+- Formats analyzed: Rapid, Blitz, and other available time controls  
+- Total games analyzed: 2,000+
 
-- 📈 **Line Charts** – Rating changes across months.  
-- 📊 **Bar Charts** – Win rate vs. specific openings.  
-- 🥧 **Pie Charts** – Frequency of different openings.  
-- 🔥 **Heatmaps** – Visual distribution of outcomes across formats.
-
----
-
-## ⚙️ Tools & Technologies Used  
-
-- **Python** 🐍  
-- `pandas` – for data cleaning and manipulation  
-- `numpy` – for numerical computations  
-- `matplotlib` & `seaborn` – for data visualization  
-- Chess.com **API** – for fetching user data  
+Each game record includes:
+- Time control
+- Opening classification
+- Game result
+- Rating at time of game
+- Color played (White / Black)
 
 ---
 
-## 🚀 Getting Started  
+## 3️⃣ Analytical Focus Areas
 
-### 1️⃣ Clone the Repository  
-```bash
-git clone https://github.com/Fareed04/Chess-data-analysis.git
-cd Chess-data-analysis
-```
+The analysis explores the following performance dimensions:
 
-### 2️⃣ Install Dependencies  
-```bash
-pip install -r requirements.txt
-```
+### Rating Progression
+- Rating trends over time
+- Format-specific rating behavior
+- Volatility and improvement phases
 
-### 3️⃣ Run the Analysis Notebook  
-Open and run the Jupyter Notebook locally:  
-```bash
-jupyter notebook experiments.ipynb
-```
+### Win/Loss Trends
+- Overall win rate
+- Performance consistency across formats
+- Outcome distribution
 
-### 4️⃣ Explore the Visualizations  
-Examine the charts and graphs to evaluate your gameplay and areas for improvement.
+### Opening Effectiveness
+- Most frequently played openings
+- Win rate by opening (segmented by color)
+- Underperforming vs overperforming lines
+
+### Game Duration & Format Analysis
+- Performance differences across time controls
+- Strategic implications of rapid vs blitz play
 
 ---
 
-## 🧠 Sample Insights  
+## 4️⃣ Visualizations
+
+The project includes multiple visual analyses:
+
+- Line charts for rating progression  
+- Bar charts for win rate by opening  
+- Pie charts for opening frequency distribution  
+- Heatmaps for outcome distribution across formats  
+
+Example visualization:
 
 ![Rapid_win_rate_vs_opening_as_white](https://github.com/user-attachments/assets/f0a3729a-d884-47bf-8760-f525d2ff91f5)
 
-🧐 **Interesting Discovery:**  
-> In Rapid games, my best-performing White opening is the *Englund Gambit 2.dxe5 Nc6 3.Nf3 Qe7*, boasting a **75% win rate**.
+---
 
-⚠️ **Challenge Area:**  
-> I struggle significantly when playing the *Zukertort Chigorin Variation*.
+## 5️⃣ Sample Insights
+
+**High-Performing Opening (Rapid, White):**  
+Englund Gambit 2.dxe5 Nc6 3.Nf3 Qe7 — approximately 75% win rate.
+
+**Underperforming Line:**  
+Zukertort Chigorin Variation shows significantly lower success rates relative to other openings.
+
+These findings suggest measurable opening-specific performance differences that can inform strategic preparation.
 
 ---
 
-## 🙌 Contributing  
+## 6️⃣ Tools & Technologies
 
-Want to try this with your own Chess.com data?  
-Feel free to **fork** this repository and tweak the analysis to fit your own style and statistics.
+- Python  
+- pandas  
+- numpy  
+- matplotlib  
+- seaborn  
+- Chess.com API  
 
 ---
 
-## 📬 Contact  
+## 7️⃣ Project Structure
 
-📧 **Fareed Ologundudu**  
-Let’s connect on [LinkedIn](https://www.linkedin.com/in/fareed-ologundudu-129506249/) or check out more of my work on [GitHub](https://github.com/Fareed04).  
+```
+
+Chess-data-analysis/
+│
+├── experiments.ipynb      # Data extraction and full analysis workflow
+├── requirements.txt       # Dependencies
+├── README.md              # Project documentation
+
+````
+
+---
+
+## 8️⃣ How to Run Locally
+
+```bash
+git clone https://github.com/Fareed04/Chess-data-analysis.git
+cd Chess-data-analysis
+pip install -r requirements.txt
+jupyter notebook experiments.ipynb
+````
+
+---
+
+## 9️⃣ Key Takeaways
+
+* Performance varies significantly by opening choice.
+* Time control impacts win rate consistency.
+* Long-term rating progression reveals identifiable growth phases.
+* Data-driven self-analysis can replace anecdotal performance assumptions.
+
+---
+
+## 👤 Author
+
+Fareed Ologundudu
+Data Analyst | Python Developer
+
+LinkedIn: [https://www.linkedin.com/in/fareed-ologundudu-129506249/](https://www.linkedin.com/in/fareed-ologundudu-129506249/)
+GitHub: [https://github.com/Fareed04](https://github.com/Fareed04)
+
+---
+
+This project is intended for portfolio and analytical demonstration purposes.
