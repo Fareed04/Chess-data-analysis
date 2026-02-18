@@ -2,7 +2,7 @@
 
 ## 1️⃣ Project Objective
 
-This project analyzes over **2,000 rated games** played on Chess.com using data retrieved via the Chess.com API.
+This project analyzes over **3,000 rated games** played on Chess.com using data retrieved via the Chess.com API.
 
 The objective is to examine rating progression, performance trends, and opening effectiveness to uncover measurable patterns in gameplay behavior.
 
@@ -15,7 +15,7 @@ Rather than reviewing individual games, this analysis focuses on identifying sys
 - Source: Chess.com public API  
 - Scope: Personal rated game history  
 - Formats analyzed: Rapid, Blitz, and other available time controls  
-- Total games analyzed: 2,000+
+- Total games analyzed: 3,000+
 
 Each game record includes:
 - Time control
