@@ -6,7 +6,7 @@ import json
 from datetime import datetime, timedelta
 import pandas as pd
 
-# Replace this with your Chess.com username
+# Replace this with your Chess.com username 
 USERNAME = "Fareed04"
 
 def get_games():
