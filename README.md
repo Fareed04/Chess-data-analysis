@@ -289,3 +289,246 @@ All cleaning and transformation steps have been documented above.
 Both the raw file (`chess_games_raw.csv`) and the cleaned file
 (`chess_games_cleaned.csv`) are preserved in the `data/` folder
 to maintain a full audit trail of the data pipeline.
+
+## Analyze
+
+### Tools Used
+- **Language:** Python 3
+- **Libraries:** `pandas`
+- **Environment:** Jupyter Notebook
+- **Input:** `data/chess_games_cleaned.csv`
+
+---
+
+### Section 1 — Overall Performance Summary
+
+**Overall result distribution across 3,254 games:**
+| Result | Games | Percentage |
+|---|---|---|
+| Win | 1,694 | 52.1% |
+| Loss | 1,451 | 44.6% |
+| Draw | 109 | 3.3% |
+
+**Results by time control:**
+| Time Control | Games | Win % | Loss % | Draw % |
+|---|---|---|---|---|
+| Rapid | 1,430 | 52.4% | 43.6% | 4.1% |
+| Blitz | 1,722 | 51.2% | 46.0% | 2.8% |
+| Bullet | 102 | 62.7% | 35.3% | 2.0% |
+
+**Key findings:**
+- Overall win rate of 52.1% confirms more games are won than lost
+  across all formats
+- Bullet win rate (62.7%) is the highest but is based on only 102
+  games and should be interpreted with caution
+- Blitz is the most played format and also the weakest by win rate
+  at 51.2%
+- Draw rate increases with time control, peaking at 4.1% in Rapid,
+  consistent with longer games producing more defensive play
+
+---
+
+### Section 2 — Performance by Color
+
+**Overall results by color:**
+| Color | Games | Win % | Loss % | Draw % |
+|---|---|---|---|---|
+| White | 1,621 | 53.5% | 43.1% | 3.5% |
+| Black | 1,633 | 50.6% | 46.1% | 3.2% |
+
+**Results by color and time control:**
+| Time Control | Color | Win % | Loss % | Total |
+|---|---|---|---|---|
+| Blitz | White | 52.5% | 44.8% | 867 |
+| Blitz | Black | 49.8% | 47.3% | 855 |
+| Bullet | White | 70.2% | 27.7% | 47 |
+| Bullet | Black | 56.4% | 41.8% | 55 |
+| Rapid | White | 53.6% | 42.0% | 707 |
+| Rapid | Black | 51.2% | 45.1% | 723 |
+
+**Key findings:**
+- White piece performance (53.5%) consistently outperforms Black
+  (50.6%) across all time controls, a 2.9% gap overall
+- Blitz as Black (49.8% win rate) is the weakest combination in
+  the dataset, the only format and color combination where losses
+  nearly equal wins
+- The White vs Black performance gap is largest in Bullet (13.8%)
+  and smallest in Rapid (2.4%), suggesting Rapid play is the most
+  color-balanced format
+- The near equal color distribution (1,621 White vs 1,633 Black)
+  confirms no matchmaking bias in the dataset
+
+---
+
+### Section 3 — Rating Progression
+
+**Overall rating growth:**
+| Time Control | Start | Peak | Current | Net Change |
+|---|---|---|---|---|
+| Rapid | 437 | 1,476 | 1,476 | +1,039 |
+| Blitz | 483 | 979 | 979 | +496 |
+| Bullet | 697 | 893 | 754 | +57 |
+
+**Monthly average rating (last 6 months):**
+| Month | Rapid | Blitz | Bullet |
+|---|---|---|---|
+| Sep 2025 | 1,213 | 842 | N/A |
+| Oct 2025 | N/A | 867 | 834 |
+| Nov 2025 | N/A | 867 | N/A |
+| Dec 2025 | 1,223 | 893 | 893 |
+| Jan 2026 | 1,271 | 887 | N/A |
+| Feb 2026 | 1,346 | 901 | N/A |
+| Mar 2026 | 1,414 | 964 | 683 |
+
+**Key findings:**
+- Rapid is the strongest and most consistently improving format,
+  with a +1,039 net rating gain representing more than a tripling
+  of the starting rating. Currently at an all time peak of 1,476
+- Blitz shows a steady upward trend over the last 6 months
+  (842 to 964), also currently at an all time peak of 979
+- Bullet tells a different story. After peaking at 893 in October
+  2025, the rating has since dropped to 754, a regression of 139
+  points. Inconsistent play volume (gaps in monthly data) likely
+  contributes to this instability
+- Activity is growing year over year: 317 games in 2023, 1,070
+  in 2024, and 1,459 in 2025, indicating increasing engagement
+  with the game
+
+---
+
+### Section 4 — Opening Analysis
+
+**Top opening families by games played:**
+| Opening Family | Games | Win % | Loss % |
+|---|---|---|---|
+| Queens Pawn | 1,349 | 54.7% | 41.5% |
+| Scandinavian Defense | 853 | 48.8% | 47.7% |
+| Indian Game | 187 | 48.1% | 49.2% |
+| Englund Gambit | 148 | 55.4% | 41.9% |
+| Queens Gambit | 76 | 39.5% | 60.5% |
+| Nimzowitsch Defense | 71 | 50.7% | 49.3% |
+
+**Best performing opening families as White (min 20 games):**
+| Opening | Games | Win % |
+|---|---|---|
+| Englund Gambit | 147 | 55.8% |
+| Queens Pawn | 1,008 | 55.3% |
+| French Defense | 23 | 52.2% |
+| English Defense | 27 | 51.9% |
+
+**Worst performing opening families as White (min 20 games):**
+| Opening | Games | Win % |
+|---|---|---|
+| Kings Fianchetto | 21 | 42.9% |
+| Modern Defense | 48 | 43.8% |
+| Old Benoni | 45 | 44.4% |
+| London System | 27 | 44.4% |
+
+**Best performing opening families as Black (min 20 games):**
+| Opening | Games | Win % |
+|---|---|---|
+| Van't Kruijs | 31 | 67.7% |
+| Nimzowitsch Larsen | 26 | 61.5% |
+| Alekhine's Defense | 45 | 53.3% |
+| Queens Pawn | 341 | 53.1% |
+
+**Worst performing opening families as Black (min 20 games):**
+| Opening | Games | Win % |
+|---|---|---|
+| Kings Fianchetto | 28 | 39.3% |
+| Queens Gambit | 76 | 39.5% |
+| English Opening | 25 | 40.0% |
+| Scandinavian Defense | 853 | 48.8% |
+
+**Key findings:**
+- Queens Pawn is the backbone of the White repertoire, played in
+  1,008 games with a solid 55.3% win rate
+- The Scandinavian Defense is the most critical finding in the
+  entire analysis. It accounts for 853 games (26% of all games)
+  as the primary Black response, yet produces only a 48.8% win
+  rate. This is the single biggest area for improvement
+- Queens Gambit as Black is the most urgent problem by win rate,
+  producing only 39.5% wins across 76 statistically reliable games
+- Kings Fianchetto is a weakness on both sides, producing 42.9%
+  as White and 39.3% as Black, making it a clear candidate for
+  study or avoidance
+- Van't Kruijs (67.7% as Black) and Nimzowitsch Larsen (61.5% as
+  Black) are strong performers but are based on smaller sample
+  sizes (31 and 26 games respectively) and should be interpreted
+  with appropriate caution
+
+---
+
+### Section 5 — Accuracy Analysis
+*Note: Based on 653 games with accuracy data, representing 20.1%
+of the total dataset. Chess.com only provides accuracy for
+reviewed games. Findings should be interpreted as indicative
+rather than fully representative.*
+
+**Average accuracy by result:**
+| Result | Games | Avg Accuracy | Min | Max |
+|---|---|---|---|---|
+| Win | 376 | 76.25% | 33.0% | 100% |
+| Draw | 25 | 77.57% | 59.3% | 89.6% |
+| Loss | 252 | 67.27% | 25.0% | 100% |
+
+**Average accuracy by time control:**
+| Time Control | Games | Avg Accuracy |
+|---|---|---|
+| Rapid | 452 | 73.16% |
+| Bullet | 15 | 72.93% |
+| Blitz | 186 | 72.05% |
+
+**Average accuracy by color:**
+| Color | Games | Avg Accuracy |
+|---|---|---|
+| White | 324 | 74.00% |
+| Black | 329 | 71.69% |
+
+**Average accuracy by result and time control:**
+| Time Control | Win | Draw | Loss |
+|---|---|---|---|
+| Rapid | 76.41% | 78.12% | 67.52% |
+| Blitz | 75.84% | 75.53% | 66.93% |
+| Bullet | 76.23% | 77.40% | 63.55% |
+
+**Top openings by average accuracy (min 10 games):**
+| Opening | Games | Avg Accuracy |
+|---|---|---|
+| Modern Defense | 15 | 75.24% |
+| Indian Game | 50 | 74.29% |
+| Queens Pawn | 269 | 73.93% |
+| Englund Gambit | 29 | 73.40% |
+| Scandinavian Defense | 157 | 72.43% |
+| Queens Gambit | 20 | 72.30% |
+| Nimzowitsch Defense | 11 | 71.72% |
+| Kings Fianchetto | 11 | 61.15% |
+
+**Key findings:**
+- A consistent ~9 point accuracy gap exists between wins (76.25%)
+  and losses (67.27%), confirming that accuracy is a strong
+  predictor of game outcome across all formats
+- Accuracy is remarkably consistent across time controls
+  (72.05% to 73.16%), suggesting performance does not degrade
+  significantly under time pressure
+- White accuracy (74.00%) outperforms Black accuracy (71.69%) by
+  2.31 points, consistent with the win rate advantage seen in
+  Section 2
+- Kings Fianchetto has the lowest average accuracy at 61.15%,
+  nearly 13 points below Modern Defense. Combined with poor win
+  rates on both sides from Section 4, this confirms Kings
+  Fianchetto as the weakest opening in the repertoire both in
+  terms of understanding and results
+- Scandinavian Defense accuracy (72.43%) sits below the Queens
+  Pawn average (73.93%), partially explaining the lower win rate
+  in this heavily played opening
+
+---
+
+### Deliverable
+A summary of the analysis has been documented above across five
+sections covering overall performance, color-based performance,
+rating progression, opening repertoire, and accuracy trends.
+Key patterns and findings have been identified and will be
+translated into visualizations in the Share phase and
+recommendations in the Act phase.
