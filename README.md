@@ -290,7 +290,7 @@ Both the raw file (`chess_games_raw.csv`) and the cleaned file
 (`chess_games_cleaned.csv`) are preserved in the `data/` folder
 to maintain a full audit trail of the data pipeline.
 
-## Analyze
+## Phase 4: Analyze
 
 ### Tools Used
 - **Language:** Python 3
