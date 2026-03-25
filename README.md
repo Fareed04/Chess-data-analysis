@@ -532,3 +532,229 @@ rating progression, opening repertoire, and accuracy trends.
 Key patterns and findings have been identified and will be
 translated into visualizations in the Share phase and
 recommendations in the Act phase.
+
+## Phase 5: Share
+
+### Tools Used
+- **Language:** Python 3
+- **Libraries:** `matplotlib`, `seaborn`
+- **Environment:** Jupyter Notebook
+- **Output:** Inline display + saved to `reports/figures/`
+
+---
+
+### Visualizations
+
+#### Chart 1 — Overall Result Distribution
+![Overall Result Distribution](reports/figures/01_overall_result_distribution.png)
+
+A bar chart showing the overall distribution of wins, losses, and
+draws across all 3,254 rated games. Wins account for 52.1% of all
+games, confirming a positive overall record.
+
+---
+
+#### Chart 2 — Win Rate by Time Control
+![Win Rate by Time Control](reports/figures/02_winrate_by_time_control.png)
+
+A bar chart comparing win rates across Rapid, Blitz, and Bullet.
+Bullet shows the highest win rate (62.7%) but is based on a small
+sample of 102 games. Blitz is the weakest format at 51.2% despite
+being the most played.
+
+---
+
+#### Chart 3 — Win Rate by Color and Time Control
+![Win Rate by Color](reports/figures/03_winrate_by_color.png)
+
+Two side by side bar charts showing win rates by color overall and
+broken down by time control. White consistently outperforms Black
+across all formats, with the largest gap in Bullet (13.8%) and the
+smallest in Rapid (2.4%). Blitz as Black (49.8%) is the weakest
+combination in the entire dataset.
+
+---
+
+#### Chart 4 — Rating Progression by Time Control
+![Rating Progression](reports/figures/04_rating_progression.png)
+
+A line chart tracking monthly rating progression across all three
+time controls from March 2023 to March 2026. Rapid shows the
+strongest and most consistent upward trend (+1,039 net gain).
+Blitz is steadily climbing (+496). Bullet peaked in October 2025
+and has since regressed by 139 points.
+
+---
+
+#### Chart 5 — Opening Performance as White
+![Opening Performance White](reports/figures/05_opening_performance_white.png)
+
+Side by side horizontal bar charts showing the best and worst
+performing opening families as White (minimum 20 games). The
+Englund Gambit (55.8%) and Queens Pawn (55.3%) are the strongest
+performers. Kings Fianchetto (42.9%) and Modern Defense (43.8%)
+are the weakest.
+
+---
+
+#### Chart 6 — Opening Performance as Black
+![Opening Performance Black](reports/figures/06_opening_performance_black.png)
+
+Side by side horizontal bar charts showing the best and worst
+performing opening families as Black (minimum 20 games). Van't
+Kruijs (67.7%) and Nimzowitsch Larsen (61.5%) lead as the best
+performers. Kings Fianchetto (39.3%) and Queens Gambit (39.5%)
+are the most problematic openings.
+
+---
+
+#### Chart 7 — Accuracy Analysis
+![Accuracy Analysis](reports/figures/07_accuracy_analysis.png)
+
+Side by side bar charts showing average accuracy by result and by
+opening family. A consistent 9 point accuracy gap exists between
+wins (76.25%) and losses (67.27%). Kings Fianchetto has the lowest
+average accuracy at 61.15%, nearly 13 points below the next lowest
+opening, confirming it as the least understood opening in the
+current repertoire.
+
+---
+
+### Key Findings
+- White piece play (53.5%) consistently outperforms Black (50.6%)
+  across all formats
+- Blitz as Black is the weakest combination at 49.8% win rate
+- Rapid is the strongest and most consistently improving format
+  with a current all time peak rating of 1,476
+- The Scandinavian Defense accounts for 26% of all games yet
+  produces only a 48.8% win rate — the single biggest opening
+  weakness by volume
+- Queens Gambit as Black has the worst statistically reliable win
+  rate at 39.5% across 76 games
+- Kings Fianchetto is a weakness on both sides by win rate and
+  accuracy
+- Accuracy is a strong predictor of results with a 9 point gap
+  between wins and losses across all formats
+
+---
+
+### Deliverable
+Supporting visualizations and key findings have been documented
+above. All charts have been saved to `reports/figures/` and are
+embedded inline in the notebook for presentation purposes.
+
+## Phase 6: Act
+
+### Final Conclusions
+
+The analysis of 3,254 rated Chess.com games from March 2023 to March
+2026 reveals clear and measurable patterns in performance across
+openings, colors, time controls, and accuracy. The data tells a
+consistent story: the gap between winning and losing is closely tied
+to opening preparation and piece color, not time pressure.
+
+---
+
+### Top High-Level Insights
+
+1. **White outperforms Black across every format.** With a 53.5% win
+   rate as White versus 50.6% as Black, and a loss rate that is 3
+   points higher as Black, improving Black piece play represents the
+   single highest-leverage opportunity for overall rating improvement.
+
+2. **Blitz as Black is the weakest combination in the dataset.** A
+   49.8% win rate in the most played format (855 games) means nearly
+   as many games are lost as won in this specific scenario. Targeted
+   improvement here would have the most immediate impact on the
+   overall Blitz rating.
+
+3. **The Scandinavian Defense is the most critical opening to study.**
+   It accounts for 26% of all games (853 games) as the primary Black
+   response yet produces only a 48.8% win rate. Given the volume of
+   games played in this opening, even a modest improvement in win rate
+   here would significantly impact overall results.
+
+4. **The Queens Gambit as Black is the most urgent problem by win
+   rate.** A 39.5% win rate across 76 statistically reliable games
+   means more games are lost than won in this opening. Studying the
+   key defensive lines and ideas in the Queens Gambit should be an
+   immediate priority.
+
+5. **Kings Fianchetto is a weakness on both sides.** With a 42.9%
+   win rate as White and 39.3% as Black, combined with the lowest
+   average accuracy of any opening at 61.15%, this opening exposes
+   the most gaps in positional understanding. It should either be
+   studied thoroughly or avoided entirely until a stronger foundation
+   is built.
+
+6. **Accuracy is a strong and consistent predictor of results.** A
+   9 point accuracy gap exists between wins (76.25%) and losses
+   (67.27%) across all formats. Reducing blunders and improving
+   calculation in critical positions will directly translate to
+   better results regardless of the opening played.
+
+7. **Rapid is the strongest and most consistently improving format.**
+   A +1,039 rating gain and a current all time peak of 1,476
+   demonstrates that deeper calculation and longer thinking time
+   brings out the best in the current playing style. Lessons learned
+   in Rapid should be applied to Blitz improvement.
+
+8. **Bullet is inconsistent and declining.** A 139 point regression
+   since the October 2025 peak, combined with irregular play volume,
+   suggests Bullet should be deprioritized until Blitz and Rapid
+   targets are closer to being achieved.
+
+---
+
+### Recommendations
+
+1. **Study the Scandinavian Defense deeply.** Learn the key
+   variations, typical middlegame plans, and common tactical
+   patterns. Given the volume of games in this opening, this is
+   the highest return on investment activity available.
+
+2. **Learn the Queens Gambit defensive lines as Black.** Focus on
+   understanding the key ideas behind the Queens Gambit Declined
+   and Queens Gambit Accepted to stop the current 39.5% win rate
+   from persisting.
+
+3. **Address the Kings Fianchetto on both sides.** Either study the
+   positional ideas behind this opening thoroughly or replace it
+   with better understood alternatives. The 61.15% accuracy in this
+   opening confirms it is the least understood opening in the current
+   repertoire.
+
+4. **Maintain and build on the Queens Pawn system as White.** With
+   a 55.3% win rate across 1,008 games it is clearly the strongest
+   part of the current repertoire. Deepening knowledge of its key
+   variations will help defend and extend this advantage.
+
+5. **Prioritize Rapid and Blitz over Bullet.** Focus game volume on
+   the two formats where ratings are actively climbing and defer
+   Bullet until higher rated targets in Rapid and Blitz are achieved.
+
+---
+
+### Additional Deliverables for Further Exploration
+
+- **Opponent rating analysis:** Examine how win rates change against
+  higher and lower rated opponents to identify performance ceilings
+  and floors at each rating band
+- **Time of day analysis:** Investigate whether performance varies
+  by time of day or day of week to identify optimal playing conditions
+- **Game length analysis:** Analyze whether shorter or longer games
+  correlate with better results across different opening families
+- **Trend analysis by opening over time:** Track whether win rates
+  in key openings like the Scandinavian Defense are improving or
+  declining over time to measure the impact of study and practice
+- **Termination type analysis:** Break down how games are being lost
+  (checkmate, timeout, resignation) to identify whether time
+  management or calculation is the bigger issue
+
+---
+
+### Deliverable
+Top high-level insights and recommendations have been documented
+above based on the full analysis. The next step is to publish this
+case study to a portfolio, write a brief project summary, and begin
+acting on the opening study recommendations identified in the data.
