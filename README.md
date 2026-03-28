@@ -351,7 +351,7 @@ of the opening played.
 ![Overall Result Distribution](reports/figures/01_overall_result_distribution.png)
 
 #### Chart 2 — Win Rate by Time Control
-![Win Rate by Time Control](reports/figures/02_winrate_by_time_control.png)
+![Win Rate by Time Control](reports/figures/02_results_by_time_control.png)
 
 #### Chart 3 — Win Rate by Color and Time Control
 ![Win Rate by Color](reports/figures/03_winrate_by_color.png)
