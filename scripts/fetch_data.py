@@ -60,8 +60,8 @@ def get_all_games():
 
 games_data = get_all_games()
 
-# Convert games list to DataFrame
+# Converting games list to DataFrame
 df = pd.json_normalize(games_data)  # Flatten nested JSON fields
 
-# Save to CSV
+# Saving data to CSV file
 df.to_csv("data/chess_games_raw.csv", index=False)

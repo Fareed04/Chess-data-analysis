@@ -131,6 +131,9 @@ chess-performance-analysis
 │       ├── 06_opening_performance_black.png
 │       └── 07_accuracy_analysis.png
 │
+├── scripts
+│   ├── fetch_data.py
+│
 ├── requirements.txt
 ├── .gitignore
 └── README.md
